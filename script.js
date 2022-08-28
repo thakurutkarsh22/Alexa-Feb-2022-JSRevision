@@ -100,3 +100,6 @@ const myGetAgeFunction1 = obj.getAge.bind(obj);
 
 console.log("line 106");
 myGetAgeFunction1();
+
+
+
