@@ -44,7 +44,7 @@ let obj = {
   age: "12",
   getAge: function (obj) {
     console.log("hey my age is:", this.age, " and my name is: ", this.name);
-  }
+  },
 };
 
 const obj1 = {
@@ -52,7 +52,7 @@ const obj1 = {
   rolNo: "89",
   getAge: function () {
     console.log("hey my age is:", this.age, " and my name is: ", this.name);
-  }
+  },
 };
 
 // Implicit binding
@@ -69,7 +69,7 @@ const obj1 = {
 let sumObj = {
   sum: function sum(a, b) {
     return a + b;
-  }
+  },
 };
 
 const mySumFunction = sumObj.sum;
@@ -101,5 +101,45 @@ const myGetAgeFunction1 = obj.getAge.bind(obj);
 console.log("line 106");
 myGetAgeFunction1();
 
+// ---------------- Closures --------------------
+// 1. Callback hell (readibility, sequencing)
+// 2. Inversion of control (not having porper control of the execution)...
 
+// a()
 
+// b(call) {
+//   call(call){
+//     call() {
+//       f()
+//     }
+//     d()
+//   }
+//   c()
+// }
+
+// e(b())
+
+function recordTheUserANdAnalytics() {
+  //1. send something to anaylitcs
+  console.log("do send to analysis");
+
+  //2. save it on the server
+
+  //3. cut the money from bank
+}
+
+// inversion of control....
+
+// cult.Fit
+// send the functon you want to implement and the price so that we can pay you
+paymetRazorPay(recordTheUserANdAnalytics);
+
+// setTimeout(callbackFunction, 1000);
+
+const ampountdeducted = await paymentRazorPayv2();
+
+if (condition) {
+  recordTheUserANdAnalytics();
+} else {
+  rollback();
+}
